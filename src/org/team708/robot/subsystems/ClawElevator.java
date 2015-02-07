@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.PIDSource;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * 
@@ -82,5 +83,13 @@ public class ClawElevator extends PIDSubsystem {
         // Use output to drive your system, like a motor
         // e.g. yourMotor.set(output);
     	clawElevatorMotor.set(output);
+    }
+    
+    public void sendToDashBoard() {
+    	
+    	SmartDashboard.putNumber("Claw Encoder Raw", clawElevatorEncoder.getRaw());
+    	SmartDashboard.putNumber("Claw Encoder Distance", clawElevatorEncoder.getDistance());
+    	SmartDashboard.putNumber("Claw Encoder Rate", clawElevatorEncoder.getRate());
+    	
     }
 }
